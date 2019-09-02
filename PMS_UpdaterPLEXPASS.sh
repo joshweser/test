@@ -127,7 +127,7 @@ webGet()
 
     if [ $VERBOSE = 1 ]; then QUIET=""; fi
     echo Downloading $1 | LogMsg
-    wget $QUIET $LOGININFO --auth-no-challenge --ca-certificate=$CERTFILE --timestamping --directory-prefix="$DOWNLOADPATH" "$1"
+    fetch $QUIET $LOGININFO --auth-no-challenge --ca-certificate=$CERTFILE --timestamping --directory-prefix="$DOWNLOADPATH" "$1"
     if [ $? -ne 0 ]; then
         echo Error downloading $1
         exit 1
